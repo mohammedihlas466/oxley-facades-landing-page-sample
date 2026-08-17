@@ -561,19 +561,14 @@ footer ul a:hover{color:#fff;}
 .js .reveal{opacity:0;transform:translateY(22px);
   transition:opacity .85s var(--e-out) var(--d,0s),transform .85s var(--e-out) var(--d,0s);}
 .js .reveal.in{opacity:1;transform:none;}
-.js .hero .line>span{transform:translateY(115%);animation:rise .95s var(--e-out) forwards;}
-.js .hero .line:nth-child(2)>span{animation-delay:.13s;}
-.js .hero .line:nth-child(3)>span{animation-delay:.26s;}
-@keyframes rise{to{transform:translateY(0);}}
-.js .hero-bg img{animation:settle 2s var(--e-out) forwards;}
-@keyframes settle{from{transform:scale(1.07);}to{transform:scale(1);}}
+/* The hero headline and backdrop stay static: they are the LCP element, and
+   animating them in stops Lighthouse recording a Largest Contentful Paint. */
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
     transition-duration:.001ms!important;scroll-behavior:auto!important;}
   .js .reveal{opacity:1!important;transform:none!important;}
-  .js .hero .line>span{transform:none!important;}
   .marq-track{animation:none!important;transform:none!important;}
   .marq{overflow-x:auto;-webkit-mask-image:none;mask-image:none;}
   .ly{transition:none!important;}
@@ -633,15 +628,10 @@ footer ul a:hover{color:#fff;}
 .js .reveal{transform:translateY(30px);transition:opacity 1s var(--e-out) var(--d,0s),transform 1s var(--e-out) var(--d,0s);}
 .js .nav{opacity:0;transform:translateY(-14px);animation:loadIn .8s var(--e-out) .1s forwards;}
 .js .hero-eyebrow{opacity:0;transform:translateY(18px);animation:loadIn .9s var(--e-out) .34s forwards;}
-.js .hero .line>span{animation-duration:1.15s;}
-.js .hero .line:nth-child(1)>span{animation-delay:.46s;}
-.js .hero .line:nth-child(2)>span{animation-delay:.59s;}
-.js .hero .line:nth-child(3)>span{animation-delay:.72s;}
 .js .hero-lede{opacity:0;transform:translateY(18px);animation:loadIn .9s var(--e-out) .94s forwards;}
 .js .hero-cta{opacity:0;transform:translateY(18px);animation:loadIn .9s var(--e-out) 1.08s forwards;}
 .js .hero-meta{opacity:0;transform:translateY(20px);animation:loadIn 1s var(--e-out) 1.24s forwards;}
 .js .wa{opacity:0;transform:scale(.6);animation:loadPop .7s var(--e-out) 1.5s forwards;}
-.js .hero-bg img{animation-duration:2.6s;}
 @keyframes loadIn{to{opacity:1;transform:none;}}
 @keyframes loadPop{to{opacity:1;transform:scale(1);}}
 /* prospectus selects: custom listbox so long options never bleed the canvas */
