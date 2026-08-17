@@ -1,0 +1,13 @@
+{
+  "name": "oxley-facades",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page for Oxley Façades, Academy of Façade Engineering.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "generate-assets": "node scripts/generate-assets.js"
+  },
+  "devDependencies": {
+    "sharp": "0.33.5"
+  }
+}
